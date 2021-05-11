@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script>
+        /*var ppbutton = document.getElementById("btn1");
+        ppbutton.addEventListener("click",playPause);
+        var myVideo=document.getElementById("v");
+        
+        function playPause()
+            {
+                if(myVideo.paused){
+                    myVideo.play();
+                    ppbutton.innerHTML="Pause";
+                }
+                else{
+                    myVideo.pause();
+                    ppbutton.innerHTML="Play";
+                }
+            }
+        */
+        var myVideo=document.getElementById("v");
+        var intervalahead;
+        $(myVideo).on('play',function(){
+            myVideo.playbackRate=1.0;
+            clearInterval(intervalahead);
+        });
+        $(myVideo).on('pause',function(){
+            myVideo.playbackRate=1.0;
+            clearInterval(intervalahead);
+        });
+        $("#btn2").click(function(){
+            myVideo.playbackRate=4.0;
+        });
+
+    </script>
+    </head>
+    <body>
+        <video id="v"  width="900" height="auto" controls="controls" >
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <button id="btn1">></button>
+              <button id="btn2">>></button>
+    </body>
+</html>
